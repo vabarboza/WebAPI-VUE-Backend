@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 class CategoryController extends Controller
 {
     public function index()
-    {return Category::all();
+    {
         if (Category::all()->isEmpty()) {
             return response()->json(['Message' => 'Nenhuma categoria encontada!'], 404);
         } else {
@@ -21,7 +21,7 @@ class CategoryController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'titulo' => 'required|min:2',
-            'descricao' => 'required|min:5',
+            'descricao' => 'required|min:2',
         ]);
 
         if ($validation->fails()) {
@@ -47,7 +47,7 @@ class CategoryController extends Controller
         if (Category::find($id)) {
             $validation = Validator::make($request->all(), [
                 'titulo' => 'min:2',
-                'descricao' => 'min:5',
+                'descricao' => 'min:2',
             ]);
 
             if ($validation->fails()) {
