@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use NunoMaduro\Collision\Adapters\Phpunit\Style;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
